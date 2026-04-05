@@ -63,11 +63,13 @@ class OptionalDecorator(object):
 
 enable_with_setting = OptionalDecorator
 
-def json_response(field_map={}):
+def json_response(field_map=None):
     """ Converts a serializable data structure into the appropriate HTTP response.
         Allows changing the field names using field_map, which might be complicated
         if related lookups were used.
     """
+    if field_map is None:
+        field_map = {}
 
     # Here instead of at the top because of circular imports
     from esp.utils.web import render_to_response
