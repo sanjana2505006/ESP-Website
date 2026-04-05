@@ -143,7 +143,7 @@ class BlankSelectWidget(forms.Select):
     template_name = 'django/forms/widgets/blankselect.html'
 
     def __init__(self, blank_choice=('', ''), *args, **kwargs):
-        super(forms.Select, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.blank_value = blank_choice[0]
         self.blank_label = blank_choice[1]
 
