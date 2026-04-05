@@ -21,9 +21,9 @@ def force_str(x):
     '\\xc3\\x85ngstrom'
 
     """
-    if isinstance(x, str) or isinstance(x, str):
+    if isinstance(x, str):
         return x
-    return str(x).encode('utf8')
+    return str(x)
 
 def ascii(x):
     """
