@@ -120,6 +120,7 @@ def render_to_response(template, request, context, content_type=None, use_reques
 
     section = request.path.split('/')[1]
 
+    context = context.copy()
     context.update(esp_context_stuff())
 
     _inject_active_program_tags(request, context)
