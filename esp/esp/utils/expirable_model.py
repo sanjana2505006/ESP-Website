@@ -54,7 +54,7 @@ class ExpirableModel(models.Model):
 
     def unexpire(self, save=True):
         self.end_date = None
-        if self.start_date > datetime.now():
+        if self.start_date and self.start_date > datetime.now():
             self.start_date = datetime.now()
         if save:
             self.save()
